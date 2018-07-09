@@ -1,0 +1,79 @@
+{include file="public/header"/} {include file='public/base_js' /}
+<body>
+    <div class="x-body">
+        <form class="layui-form" id="form_data">
+			<div class="layui-form-item">
+                <label class="layui-form-label">地点</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="address" value="{$joinEdit.address_id}" required lay-verify="required" placeholder="" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">姓名</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="name" value="{$joinEdit.name}" required lay-verify="required" placeholder="" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">手机号</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="tel" required lay-verify="required" placeholder="" value="{$joinEdit.tel}" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">身份证</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="card" required lay-verify="required" placeholder="" value="{$joinEdit.card}" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">护照号码</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="pass_num" required lay-verify="required" placeholder="" value="{$joinEdit.pass_num}" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">护照有效期</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="pass_term" required lay-verify="required" placeholder="" value="{$joinEdit.pass_term}" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">护照英文姓</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="pass_last" required lay-verify="required" placeholder="" value="{$joinEdit.pass_last}" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">护照英文名</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="pass_first" required lay-verify="required" placeholder="" value="{$joinEdit.pass_first}" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">任职机构</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="outfit" required lay-verify="required" placeholder="" value="{$joinEdit.outfit}" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">职务</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="job" required lay-verify="required" placeholder="" value="{$joinEdit.job}" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">姓名</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="z_username" required lay-verify="required" placeholder="" value="{$joinEdit.z_username}" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">手机号</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="z_number" required lay-verify="required" placeholder="" value="{$joinEdit.z_number}" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+        </form>
+    </div>
+    {include file="public/footer"/}

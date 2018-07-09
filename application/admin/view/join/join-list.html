@@ -1,0 +1,83 @@
+{include file="public/header"/}
+{include file='public/base_js' /}
+  <body>
+    <div class="x-nav">
+      <span class="layui-breadcrumb">
+        <a href="">首页</a>
+        <a href="">报名列表</a>
+      </span>
+      <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);" title="刷新">
+        <i class="layui-icon" style="line-height:30px">ဂ</i></a>
+    </div>
+    <div class="x-body">
+        <div class="layui-input-inline">
+          <form class="layui-form" id="form_data">
+            <div class="layui-input-inline">
+                <select name="address_id" lay-filter="search">
+                    {foreach $address as $v}
+                    <option {if condition="$v.id eq $address_id"} selected="selected" {/if}value="{$v.id}">{$v.address_name}</option>
+                    {/foreach}
+                </select>
+            </div>
+            </form>
+        </div>
+        <button class="layui-btn" id="excel">导出excel表格</button>
+      <span class="x-right" style="line-height:40px">共有数据：{$joinCount} 条</span>
+      <table class="layui-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>姓名</th>
+            <th>手机号</th>
+            <th>身份证</th>
+            <th>地点</th>
+            <th>护照号码</th>
+ 			<th>护照有效期</th>
+            <th>护照英文姓</th>
+            <th>护照英文名</th>
+            <th>任职机构</th>
+            <th>职务</th>
+            <th>操作</th>
+        </thead>
+        <tbody id="dish-img">
+          {foreach $joinList as $v}
+          <tr>
+            <td>{$v.id}</td>
+            <td>{$v.name}</td>
+            <td>{$v.tel}</td>
+            <td>{$v.card}</td>
+            <td>{$v.address_id}</td>
+            <td>{$v.pass_num}</td>
+            <td>{$v.pass_term}</td>
+            <td>{$v.pass_last}</td>
+            <td>{$v.pass_first}</td>
+            <td>{$v.outfit}</td>
+            <td>{$v.job}</td>
+            <td class="td-manage">
+              <a title="查看"  onclick="x_admin_show('查看','{:url('join/joinEdit',['id'=>$v.id])}',600,600)" href="javascript:;">
+                <i class="layui-icon">&#xe642;</i>
+              </a>
+              <a title="删除" onclick="del(this,'{:url('join/deletejoin')}','id={$v.id}')" href="javascript:;">
+                <i class="layui-icon">&#xe640;</i>
+              </a>
+            </td>
+          </tr>
+          {/foreach}
+        </tbody>
+      </table>
+    </div>
+    <script>
+    layui.use(['layer','form'], function () {
+        $ = layui.jquery;
+        var layer = layui.layer;
+        var form = layui.form;
+        form.on('select(search)', function(data){
+          $('#form_data').submit();
+        });
+        $('#excel').click(function(){
+          push("", "{:url('join/excel')}", $('#form_data').serialize());
+        })
+    });
+    
+    </script>
+{include file="public/footer"/}

@@ -1,0 +1,42 @@
+{include file="public/header"}
+ <style type="text/css" media="screen" id="test">
+ 	.ming>p>img{
+	 	border-radius: 15px !important;
+        width: 100%!important;
+ 	}
+ </style>
+    <div class="qian0">
+        <div class="yuan0"></div>
+        <span>{$detail.money}</span>
+    </div>
+    <div class="three">
+        <ul class="fen0 fen3">
+            <li class="one">
+                <img src="__STATIC__/index/img/dingwei.png" alt="" style="width: 18px; height: 22px;">
+            </li>
+            {foreach $scenic as $v}
+            <li  style="font-size:14px;">{$v}</li>
+            {/foreach}
+        </ul>
+        <div class="qiguai" style="width:100%; text-align: center;;">
+            <!--<span class="tow" stye="display: inline-block">
+                 <img src="__STATIC__/index/img/time.png" alt="" style="width: 20px; height: 20px;">
+            </span>-->
+            <span>旅游时间：{$detail.start_time}——{$detail.end_time}</span>
+        </div>
+    </div>
+    <div class="fen1">
+        <ol class="fun fun0">
+            <div style="border-left: 4px solid blue; margin-top: 15px"> &nbsp;旅游详情</div>
+            <li class="ming">
+                {$detail.content}
+            </li>
+        </ol>
+    </div>
+    <div class="mne"  style="background: #283c95;">
+        <a href="/join/{$detail.address_id}"  style="color: #fff;">报名</a>
+    </div>
+
+</div>
+</body>
+</html>

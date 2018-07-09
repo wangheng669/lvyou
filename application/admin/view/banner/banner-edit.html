@@ -1,0 +1,55 @@
+{include file="public/header"/}
+
+<body>
+    <div class="x-body">
+        <form class="layui-form" id="form_data">
+            <div class="layui-form-item">
+                <label for="username" class="layui-form-label">
+                    <span class="x-red">*</span>图片
+                </label>
+                <div class="layui-input-inline">
+                    <button type="button" class="layui-btn" id="img">
+                        <i class="layui-icon">&#xe67c;</i>上传图片
+                    </button>
+                </div>
+            </div>
+            <input type="text" name="id" value="{$bannerEdit.id}" hidden>
+            <img src="{$bannerEdit.banner_img}" width="192px" style="margin-left:110px;margin-bottom:10px;">
+            <input id="dish_img" type="text" name="banner_img" value="{$bannerEdit.banner_img}" hidden>
+            <div class="layui-form-item">
+                <label class="layui-form-label">是否选中</label>
+                <div class="layui-input-block">
+                  <input type="radio" name="is_active" value="1" title="是" {if condition="$bannerEdit.is_active eq 1"} checked="" {/if}>
+                  <input type="radio" name="is_active" value="0" title="否"{if condition="$bannerEdit.is_active eq 0"} checked="" {/if}>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="L_repass" class="layui-form-label">
+                </label>
+                <button type="button" class="layui-btn" lay-filter="add" lay-submit="">
+                    保存
+                </button>
+            </div>
+        </form>
+    </div>
+    {include file='public/base_js' /}
+    <script>
+        layui.use(['form', 'layer', 'upload'], function () {
+            $ = layui.jquery;
+            var form = layui.form;
+            var upload = layui.upload;
+            //监听提交
+            form.on('submit(add)', function () {
+                push("", "{:url('banner/saveBanner')}", $('#form_data').serialize());
+            });
+            //图片上传
+            var uploadInst = upload.render({
+                elem: '#img' //绑定元素
+                , url: '{:url('banner/upload')}' // 上传接口
+                , done: function (res) {
+                    $('img').attr('src', '/public/uploads/' + res.src).height(119);
+                    $('#dish_img').val('/public/uploads/' + res.src);
+                }
+            });
+        });
+    </script> {include file="public/footer"/}

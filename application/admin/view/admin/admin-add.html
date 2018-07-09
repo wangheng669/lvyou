@@ -1,0 +1,46 @@
+{include file='public/header'/}
+
+<body>
+    <div class="x-body">
+        <form class="layui-form" id='form-data'>
+            <div class="layui-form-item">
+                <label for="username" class="layui-form-label">
+                    管理员名称
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="username" name="username" required="" lay-verify="required" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="password" class="layui-form-label">
+                    管理员密码
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="password" name="password" required="" lay-verify="required" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="L_repass" class="layui-form-label">
+                </label>
+                <button type="button" class="layui-btn" lay-filter="add" lay-submit="">
+                    增加
+                </button>
+            </div>
+        </form>
+    </div>
+     {include file='public/base_js'/}
+    <script>
+        layui.use(['form','layer'], function(){
+            $ = layui.jquery;
+          var form = layui.form
+          ,layer = layui.layer;
+
+          //监听提交
+          form.on('submit(add)', function(data){
+            push(this,'{:url('admin/saveAdmin')}',$('#form-data').serialize());
+          });
+          
+          
+        });
+    </script>
+     {include file='public/footer'/}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport"/>
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="__STATIC__/index/css/index.css">
+    <link rel="stylesheet" href="__STATIC__/index/css/wei.css">
+    <script type="text/javascript" src="__STATIC__/index/js/jquery-1.12.4.js"></script>
+
+</head>
+
+<body>
+<div class="bao">
+       <header style="font-size:20px;">
+           松云科技
+       </header>
+      <div class="jl" style="height: 180px">
+        <div class="fen" style="height:180px">
+            <div id="demo" style="height:180px" class="carousel slide" data-ride="carousel">
+                <ul class="carousel-indicators">
+                    <li data-target="#demo" data-slide-to="0" class="active"></li>
+                    <li data-target="#demo" data-slide-to="1"></li>
+                    <li data-target="#demo" data-slide-to="2"></li>
+                    <li data-target="#demo" data-slide-to="3"></li>
+                </ul>
+                <div  style="border-radius: 15px; height: 180px;" class="carousel-inner">
+                    {foreach $banner as $v}
+                    <div class="carousel-item {if condition="$v.is_active eq 1"} active {/if}">
+                        <img src="{$v.banner_img}">
+                    </div>
+                    {/foreach}
+                </div>
+
+        </div>
+        </div>
+      </div>

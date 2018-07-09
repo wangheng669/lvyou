@@ -1,0 +1,249 @@
+body,
+div,
+p,
+ul,
+ol,
+ul,
+li,
+label {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+body {
+  height: 100%;
+  max-width: 750px;
+  font-family: 微软雅黑;
+  background: #f6f6f6;
+}
+.bao {
+  height: 100%;
+  margin: 0 auto;
+  margin-left: 0.4rem;
+  margin-right: 0.4rem;
+}
+.bao header {
+  width: 100%;
+  height: 1.8rem;
+  line-height: 1.8rem;
+  text-align: center;
+  font-size: 0.5rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #283c95;
+  max-width: 750px;
+  color: #ffffff;
+  z-index: 100;
+  -ms-position: fixed;
+}
+.bao .fen {
+  margin-top: 1.15rem;
+  width: 100%;
+  height: 8rem !important;
+}
+.bao .fen .carousel {
+  height: 100%;
+}
+.bao .fen .carousel .carousel-inner {
+  height: 100%;
+}
+.bao .fen0 {
+  margin-top: 0.9rem;
+  width: 100%;
+  height: 2rem !important;
+  background: #fff;
+  display: flex;
+}
+.bao .fen0 li {
+  width: 100%;
+  text-align: center;
+  line-height: 2rem;
+}
+.bao .fen0 li span {
+  color: #787878;
+}
+.bao .fen1 {
+  width: 100%;
+  margin-top: 0.65rem;
+  height: 30rem !important;
+  position: relative;
+}
+.bao .fen1 ol {
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+.bao .fen1 ol li {
+  display: none;
+  width: 100%;
+  float: left;
+}
+.bao .fen1 ol .ming {
+  width: 100%;
+  display: block;
+}
+.bao .fen1 ol .ming .lei {
+  position: relative;
+  height: 1500 100rem;
+  width: 100%;
+}
+.bao .fen1 ol .ming .lei .you {
+  position: absolute;
+  top: 1rem;
+  left: 1.5rem;
+  width: 4rem;
+  height: 1.8rem;
+  border: 2px solid #ffffff;
+  border-radius: 20px;
+  color: white;
+  text-align: center;
+}
+.bao .fen1 ol .ming .lei img {
+  width: 100%;
+  height: 50%;
+}
+.mne {
+  width: 100%;
+  height: 2rem;
+  line-height: 2rem;
+  text-align: center;
+  font-size: 0.28rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  max-width: 750px;
+  color: aquamarine;
+  z-index: 100;
+  -ms-position: fixed;
+}
+.carousel-inner img {
+  width: 100%;
+  height: 100%;
+}
+.xun {
+  position: fixed;
+  right: 0.2rem;
+  bottom: 3rem;
+  background: blue;
+  width: 2rem;
+  height: 2rem;
+}
+.jl {
+  margin-top: 1.85rem;
+}
+.nm {
+  border-bottom: 1px solid #00deff;
+  color: #00deff;
+}
+.zi {
+  margin-bottom: 0.3rem;
+  padding-top: 0.4rem;
+}
+.lve {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  width: 95%;
+  margin-left: 2.5%;
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+.gao {
+  line-height: 2.4rem;
+  margin-left: 0.5rem;
+}
+.yuan {
+  display: inline-block;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  background: #ef9e11;
+  margin-top: 0.6rem;
+  vertical-align: middle;
+}
+.en {
+  width: 100%;
+  height: 2rem;
+}
+.qian0 {
+  margin-top: 1rem;
+  background: #fff;
+  width: 100%;
+  height: 2.8rem;
+  padding-top: 0.4rem;
+}
+.qian0 span {
+  color: #ff7200;
+}
+.yuan0 {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  margin-left: 0.4rem;
+  background: url("../img/qian.png");
+  background-size: 100%;
+  vertical-align: middle;
+}
+.one {
+  width: 50% !important;
+}
+.fen3 {
+  margin-top: 0 !important;
+}
+.fen3 li {
+  font-size: 0.14rem;
+  height: 1.5rem;
+  border-right: 1px solid #ccc;
+  line-height: 1.5rem !important;
+  margin-top: 0.25rem;
+}
+.qiguai {
+  width: 100%;
+  background: #ffffff;
+}
+.tow {
+  width: 2.1rem;
+  text-align: center;
+}
+.three {
+  height: 6rem;
+  background: #ffffff;
+  margin-top: 1rem;
+  padding-top: 1rem;
+}
+.fun0 {
+  background: #ffffff;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.ming {
+  margin-top: 1rem;
+}
+.lei0 {
+  margin-bottom: 1rem;
+  position: relative;
+}
+.fove {
+  position: absolute;
+  bottom: 0;
+  left: 30%;
+  height: 6rem;
+  width: 10rem;
+  background: #ccc;
+}

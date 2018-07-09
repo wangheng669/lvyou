@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport"/>
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="__STATIC__/index/css/enlist.css">
+    <script type="text/javascript" src="__STATIC__/index/js/jquery-1.12.4.js"></script>
+     <script>
+     function go(opo)
+       {
+              var phone = $(opo).val();
+           var reg = /^1[3|4|5|7|8][0-9]{9}$/; //验证规则
+           var flag = reg.test(phone); //true
+              if(flag){
+//                  show_notice('对了')
+               } else{
+                  show_notice('手机号格式不正确');return false;
+               }
+       }
+
+     function IdentityCodeValid(obj) {
+         var code=$(obj).val();
+         var reg1=/(\d{6})(\d{2})(\d{2})(\d{2})(\d{3})/;
+         var reg2=/(\d{6})(\d{4})(\d{2})(\d{2})(\d{3})([0-9]|X|x)/;
+         if((code!='')&&reg1.test(code)||(code!='')&&reg2.test(code)){
+             return true
+         }else{
+             show_notice('身份证格式不正确');
+         }
+     }
+     
+    </script>
+    
+    <script type="text/javascript">
+        function show_notice(content) {
+            if ($("#motify").length == 0) {
+                $("body").append('<div class="motify" id="motify"><div class="motify-inner" id="motify_content"></div></div>');
+            }
+            $("#motify").show();
+            $("#motify_content").html(content);
+            setTimeout(function() {
+                $('#motify').hide();
+            }, 3000);
+        }
+    </script>
+    <style>
+        .motify{display:none;position:fixed;top:35%;left:50%;width:220px;padding:0;margin:0 0 0 -110px;z-index:9999;background:rgba(0, 0, 0, 0.8);color:#fff;font-size:14px;line-height:1.5em;border-radius:6px;-webkit-box-shadow:0px 1px 2px rgba(0, 0, 0, 0.2);box-shadow:0px 1px 2px rgba(0, 0, 0, 0.2);@-webkit-animation-duration 0.15s;@-moz-animation-duration 0.15s;@-ms-animation-duration 0.15s;@-o-animation-duration 0.15s;@animation-duration 0.15s;@-webkit-animation-fill-mode both;@-moz-animation-fill-mode both;@-ms-animation-fill-mode both;@-o-animation-fill-mode both;@animation-fill-mode both;}
+        .motify .motify-inner{padding:10px 10px;text-align:center;word-wrap:break-word;}
+        .motify p{margin:0 0 5px;}.motify p:last-of-type{margin-bottom:0;}
+        .chu{
+            width: 80px !important;
+            border: 0 !important;
+        }
+        .chu>li{
+            text-align: center;
+            height: 40px;
+            font-size: 14px;
+        }
+       .five>li:first-child{
+	       border-bottom:none!important;
+       }
+         li{
+	         border-color:#ccc!important;
+         }
+    </style>
+</head>
+
+<body>
+<div class="bao">
+    <header style="font-size:18px; height:40px; line-height:40px; text-align: left; ">
+       &nbsp;&nbsp;&nbsp;&nbsp;在线报名
+    </header>
+    <div class="newl"  style="display: none;">
+	    <div class="qudiao">
+	    	
+	    
+            <div class="shang">
+                <span class="zuo" style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;报名人信息</span> 
+             <span class="shan" style="float:right;font-size:12px; margin-right: 10px; color:#ccc;">删除</span>        
+            </div>
+            
+            <ul style="border-color:#ccc;" class=”my“>
+                       <li><span style="width:110px; text-align: left; font-size:14px;">&nbsp;&nbsp;&nbsp;&nbsp;姓名：</span> <input placeholder="请输入姓名"  msg="姓名" type="text" name="name[]" style="outline:none; width:200px; font-size:14px; color:#ccc;"></li>
+                       <li><span style="text-align: left; font-size:14px;">&nbsp;&nbsp;&nbsp;&nbsp;手机号：</span> <input   onchange="go(this)" maxlength="11" placeholder="请输入手机号"   msg="手机号" maxlength="11" type="text" name="tel[]" style="outline:none; width:200px; font-size:14px; color:#ccc;"></li>
+                       
+                       <li><span style="text-align: left; font-size:14px;">&nbsp;&nbsp;&nbsp;&nbsp;身份证：</span> <input  class="isd"   onchange="IdentityCodeValid(this)"  msg="身份证" placeholder="请输入身份证号" type="text" name="card[]" style="outline:none; width:200px; font-size:14px; color:#ccc;"></li>
+                        <li><span style="text-align: left; font-size:14px;">&nbsp;&nbsp;&nbsp;&nbsp;护照号码：</span> <input  placeholder="填写护照号码"  msg="护照号码" type="text" name="pass_num[]" style="outline:none; width:200px; font-size:14px; color:#ccc;"></li>
+                        <li><span style="text-align: left; font-size:14px;">&nbsp;&nbsp;&nbsp;&nbsp;护照有效期：</span> <input  placeholder="年/月/日" msg="护照有效期"  type="text" name="pass_term[]" style="outline:none; width:200px; font-size:14px; color:#ccc;"></li>
+                        <li><span style="text-align: left; font-size:14px;">&nbsp;&nbsp;&nbsp;&nbsp;护照英文姓：</span> <input  placeholder="护照英文姓" msg="护照英文姓"  type="text" name="pass_last[]" style="outline:none; width:200px; font-size:14px; color:#ccc;"></li>
+                        <li><span style="text-align: left; font-size:14px;">&nbsp;&nbsp;&nbsp;&nbsp;护照英文名：</span> <input  placeholder="护照英文名"  msg="护照英文名" type="text" name="pass_first[]" style="outline:none; width:200px; font-size:14px; color:#ccc;"></li>
+                        <li><span style="text-align: left; font-size:14px;">&nbsp;&nbsp;&nbsp;&nbsp;任职机构：</span> <input  placeholder="选填" msg="任职机构" type="text" name="outfit[]" style="outline:none; width:200px; font-size:14px; color:#ccc;"></li>
+                        <li><span style="text-align: left; font-size:14px;">&nbsp;&nbsp;&nbsp;&nbsp;职务：</span> <input  placeholder="选填" type="text" name="job[]"  msg="任职机构" style="outline:none; width:200px; font-size:14px; color:#ccc;"></li>
+                    </ul>
+                    </div>
+    </div>
+    <div id="ok" class="baoming">
+        <form action="{:url('join/enroll')}" method="post">
+	        <div style=' margin-top:48px;'>
+                                 &nbsp;&nbsp;&nbsp;&nbsp;
+                                 {if condition="$id neq ''"}<input type="text" name="address_id" value="{$id}" hidden/><input type="text" style="border:0px;   background: #f2f2f2  ;"  value="{$id}" />{else /}
+                                 <span class="">请选择路线：</span>
+                                <select style=" width:140px; border:0px;background-color:#f2f2f2;font-size:18px;" name="address_id" >
+                                    {foreach $addressList as $v}
+                                    <option value="{$v.id}">{$v.address_name}</option>
+                                    {/foreach}
+                                </select>
+                                {/if}
+
+                            </div>
+                                        <div class="news">
+                <div>
+                    
+                </div>
+                
+                <div class="new">
+	                <div class="qudiao">
+	                	
+	              
+                   <div class="shang" style="height:35px; line-height:35px; border-bottom:1px solid #ccc;">
+
+                       <span class="zuo" style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;请添加报名人信息</span>
+                       <span class="tian" style="color:#ccc">(必填)</span>
+                       <span class="shan"  style="float:right; font-size:12px; margin-right: 10px; color: #ccc;">删除</span> 
+                   </div>
+                   <ul style="border-top:0px; padding-right:0px;" class="my">
+                       <li><span style="text-align: left; font-size:14px;">&nbsp;&nbsp;&nbsp;&nbsp;姓名：</span> <input placeholder="请输入姓名" type="text"   msg="姓名" name="name[]" style="outline:none; width:210px; font-size:14px;"></li>
+                       <li><span style="text-align: left; font-size:14px;">&nbsp;&nbsp;&nbsp;&nbsp;手机号：</span> <input  maxlength="11" placeholder="请输入手机号"  msg="手机号"  maxlength="11" type="text" name="tel[]" style="outline:none; width:210px; font-size:14px;"></li>
+                       
+                       <li><span style="text-align: left; font-size:14px;">&nbsp;&nbsp;&nbsp;&nbsp;身份证：</span> <input  class="isd"  msg="护照号码" placeholder="请输入身份证号"  type="text" name="card[]" style="outline:none; width:210px; font-size:14px;"></li>
+                        <li><span style="text-align: left; font-size:14px;">&nbsp;&nbsp;&nbsp;&nbsp;护照号码：</span> <input placeholder="填写护照号码"  msg="护照号码"  type="text" name="pass_num[]" style="outline:none; width:210px; font-size:14px;"></li>
+                        <li><span style="text-align: left; font-size:14px;">&nbsp;&nbsp;&nbsp;&nbsp;护照有效期：</span> <input  placeholder="年/月/日"  msg="护照有效期" type="text" name="pass_term[]" style="outline:none; width:210px; font-size:14px;"></li>
+                        <li><span style="text-align: left; font-size:14px;">&nbsp;&nbsp;&nbsp;&nbsp;护照英文姓：</span> <input  placeholder="护照英文姓"  msg="护照英文姓"  type="text" name="pass_last[]" style="outline:none; width:210px; font-size:14px;"></li>
+                        <li><span style="text-align: left; font-size:14px;">&nbsp;&nbsp;&nbsp;&nbsp;护照英文名：</span> <input  placeholder="护照英文名"  msg="护照英文名" type="text" name="pass_first[]" style="outline:none; width:210px; font-size:14px;"></li>
+                        <li><span style="text-align: left; font-size:14px;">&nbsp;&nbsp;&nbsp;&nbsp;任职机构：</span> <input  placeholder="孩子请输入父/母任职机构"  msg="任职机构" type="text" name="outfit[]" style="outline:none; width:210px; font-size:14px; "></li>
+                        <li><span style="text-align: left; font-size:14px;">&nbsp;&nbsp;&nbsp;&nbsp;职务：</span> <input  placeholder="孩子请输入父/母职务"  msg="职务" type="text" name="job[]" style="outline:none; width:210px; font-size:14px;"></li>
+                    </ul>
+                      </div>
+                     
+                </div>
+            </div>
+             <div class="tian" style="margin-left:10px; margin-top:12px;">
+                <div class="yuan yuan7" style="font-size:16px;  color: #01b784;"> + </div>
+                <b style="font-size: 14px; color: #01b784;">&nbsp;&nbsp;添加报名人</b>
+            </div>
+            <div class="news0" style="padding-top:0px; padding-right:0px; margin-top:5px;">
+            
+            <div class="shang">
+                <span class="zuo">&nbsp;&nbsp;&nbsp;&nbsp;联系人信息</span>
+                <span class="tian" style="color:#ccc">(必填)</span>
+            </div>
+            <ul style="border-color:#ccc;" class="my">
+                <li><span style="text-align: left; font-size:14px;">&nbsp;&nbsp;&nbsp;&nbsp;姓名：</span> <input  placeholder="姓名" msg="姓名" class="name"  name="z_username" type="text" style="outline:none; width:213px; font-size:14px; color:#ccc;"></li>
+                <li style="border-bottom:0px;"><span style="text-align: left; font-size:14px;">&nbsp;&nbsp;&nbsp;&nbsp;手机号：</span> <input msg="手机号" placeholder="手机号"  class="phone" name="z_number" type="text" style="outline:none; width:213px; font-size:14px; color:#ccc;"></li>
+                
+            </ul>
+            </div>
+            <div class="mmm"></div>
+            <div class="dik">
+                <button class="dik0" onclick="return checkNull()" style="border: 0; font-size:17px; padding-left:20px; padding-right:20px; padding-top: 10px; padding-bottom:10px;"> 确认报名</button>
+            </div>
+        </form>
+
+    </div>
+</div>
+</body>
+</html>
+<script>
+
+        $(".tian").bind("click",function(){
+        var clone = $(".newl").children().clone(true);
+        
+        $(".news").append(clone);
+        });
+        
+        $(".dian0").bind("click",function(){
+        $(".chu").toggle();
+        });
+    
+    $("#fenlei>li").bind("click",function(){
+     var res =  $(this).html();// 获取当前点击的li的值
+     $("#show").html(res); //将获取的值赋值。
+   
+     });
+
+     $(".shan").bind("click",function(){
+	      $(this).parent().parent().remove();
+        });
+
+
+
+       
+          
+</script>
+<script type="text/javascript">
+            function checkNull()
+            {
+                var num=0;
+                var str="";
+                $("#ok input[type$='text']").each(function(n){
+                    if($(this).val()=="")
+                    {
+                        num++;
+                        str+="?"+$(this).attr("msg")+"不能为空！\r\n";
+                    }
+                });
+                if(num>0)
+                {
+                    alert(str);
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+        </script>
